@@ -16,6 +16,9 @@ import React, {
 
 import MyCell from './MyCell.js';
 import ItemCell from './ItemCell.js';
+import Dimensions from 'Dimensions';
+var {width , height} = Dimensions.get("window");
+
 
 class Mine extends Component {
   render() {
@@ -71,21 +74,26 @@ class Mine extends Component {
 
   renderButtomView(){
     return(
-      <View style={{flexDirection: 'row' ,justifyContent:'space-around'}}>
-        {this.renderBottomViewItem('100','优惠券')}
-        {this.renderBottomViewItem('12','评价')}
-        {this.renderBottomViewItem('50','收藏')}
+      <View style={{flexDirection: 'row' ,backgroundColor: 'rgba(255 , 255 ,255 ,0.4)' , position: 'absolute' , bottom: 0}}>
+        {this.renderBottomViewItems()}
       </View>
     );
   }
 
-  renderBottomViewItem(topTitle,bottomTitle){
-    return (
-      <View style={{alignItems: 'center'}} >
-        <Text style={{color:'white',marginTop:5}}>{topTitle}</Text>
-        <Text style={{color:'white',marginTop:5}}>{bottomTitle}</Text>
-      </View>
-    );
+  renderBottomViewItems(){
+    var itemArry = [];
+    var data = [{'topTitle':'100','bottomTitle':'优惠券'} , {'topTitle':'12','bottomTitle':'评论'},{'topTitle':'50','bottomTitle':'收藏'}];
+    for(var i = 0 ; i < data.length; i++){
+      var item = data[i];
+      itemArry.push(
+        <View style={{alignItems: 'center' , width: width*0.34 , height: 40 , borderRightWidth: 1/PixelRatio.get() , borderRightColor: 'white'}} >
+          <Text style={{color:'white',marginTop:2}}>{item.topTitle}</Text>
+          <Text style={{color:'white',marginTop:2}}>{item.bottomTitle}</Text>
+        </View>
+      );
+
+    }
+    return itemArry;
   }
 }
 
