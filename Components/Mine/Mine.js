@@ -11,7 +11,8 @@ import React, {
   Text,
   View,
   Image,
-  PixelRatio
+  PixelRatio,
+  Platform
 } from 'react-native';
 
 import MyCell from './MyCell.js';
@@ -87,8 +88,8 @@ class Mine extends Component {
       var item = data[i];
       itemArry.push(
         <View key={i} style={{alignItems: 'center' , width: width*0.34 , height: 40 , borderRightWidth: 1/PixelRatio.get() , borderRightColor: 'white'}} >
-          <Text style={{color:'white',marginTop:2}}>{item.topTitle}</Text>
-          <Text style={{color:'white',marginTop:2}}>{item.bottomTitle}</Text>
+          <Text style={{color:'white',marginTop:Platform.OS == 'ios'?2:1}}>{item.topTitle}</Text>
+          <Text style={{color:'white',marginTop:Platform.OS == 'ios'?2:1}}>{item.bottomTitle}</Text>
         </View>
       );
 
