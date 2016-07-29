@@ -86,7 +86,7 @@ class Mine extends Component {
     for(var i = 0 ; i < data.length; i++){
       var item = data[i];
       itemArry.push(
-        <View style={{alignItems: 'center' , width: width*0.34 , height: 40 , borderRightWidth: 1/PixelRatio.get() , borderRightColor: 'white'}} >
+        <View key={i} style={{alignItems: 'center' , width: width*0.34 , height: 40 , borderRightWidth: 1/PixelRatio.get() , borderRightColor: 'white'}} >
           <Text style={{color:'white',marginTop:2}}>{item.topTitle}</Text>
           <Text style={{color:'white',marginTop:2}}>{item.bottomTitle}</Text>
         </View>
