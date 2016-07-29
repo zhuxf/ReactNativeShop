@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
     borderBottomColor: '#dddddd',
     borderBottomWidth: 1/PixelRatio.get()
   }
-  
+
 });
 
 module.exports = MyCell;

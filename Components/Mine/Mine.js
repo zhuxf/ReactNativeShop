@@ -12,7 +12,8 @@ import React, {
   View,
   Image,
   PixelRatio,
-  Platform
+  Platform,
+  ScrollView
 } from 'react-native';
 
 import MyCell from './MyCell.js';
@@ -24,40 +25,40 @@ var {width , height} = Dimensions.get("window");
 class Mine extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={{height: 120,paddingTop:20,backgroundColor: 'rgba(255 , 96 ,0 ,1.0)'}}>
-          {this.navTopView()}
-          {this.renderButtomView()}
-        </View>
-        <View>
-          <MyCell imageSource='collect' title="我的订单" rightTitle="查看全部订单"/>
-          <View style={{flexDirection: 'row' , justifyContent: 'space-around'}}>
-            <ItemCell title="代付款" imageSource='order1' />
-            <ItemCell title="代使用" imageSource='order2' />
-            <ItemCell title="代评价" imageSource='order3' />
-            <ItemCell title="退款/售后" imageSource='order4' />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <View style={{height: 120,paddingTop:20,backgroundColor: 'rgba(255 , 96 ,0 ,1.0)'}}>
+            {this.navTopView()}
+            {this.renderButtomView()}
+          </View>
+          <View>
+            <MyCell imageSource='collect' title="我的订单" rightTitle="查看全部订单"/>
+            <View style={{flexDirection: 'row' , justifyContent: 'space-around'}}>
+              <ItemCell title="代付款" imageSource='order1' />
+              <ItemCell title="代使用" imageSource='order2' />
+              <ItemCell title="代评价" imageSource='order3' />
+              <ItemCell title="退款/售后" imageSource='order4' />
 
+            </View>
+          </View>
+          <View style={{marginTop:20}}>
+            <MyCell imageSource='draft' title="我的钱包" rightTitle="账户余额：100¥"/>
+            <MyCell imageSource='like' title="抵用券" rightTitle="0" />
+          </View>
+
+          <View style={{marginTop:20}}>
+            <MyCell imageSource='card' title="商城积分" />
+          </View>
+
+          <View style={{marginTop:20}}>
+            <MyCell imageSource='new_friend' title="今日推荐" rightImageSource='me_new'/>
+          </View>
+
+          <View style={{marginTop:20}}>
+            <MyCell imageSource='pay' title="我要合作" rightTitle="轻松开店，招财进宝" />
           </View>
         </View>
-        <View style={{marginTop:20}}>
-          <MyCell imageSource='draft' title="我的钱包" rightTitle="账户余额：100¥"/>
-          <MyCell imageSource='like' title="抵用券" rightTitle="0" />
-        </View>
-
-        <View style={{marginTop:20}}>
-          <MyCell imageSource='card' title="商城积分" />
-        </View>
-
-        <View style={{marginTop:20}}>
-          <MyCell imageSource='new_friend' title="今日推荐" rightImageSource='me_new'/>
-        </View>
-
-        <View style={{marginTop:20}}>
-          <MyCell imageSource='pay' title="我要合作" rightTitle="轻松开店，招财进宝" />
-        </View>
-
-
-      </View>
+      </ScrollView>
     );
   }
 
