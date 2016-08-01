@@ -14,7 +14,7 @@ import React, {
   ListView
 } from 'react-native';
 
-class Shop extends Component {
+class TopListView extends Component {
 
   constructor(props){
     super(props);
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
 
 });
 
-module.exports = Shop;
+module.exports = TopListView;
