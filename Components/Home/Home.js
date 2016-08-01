@@ -12,11 +12,12 @@ import React, {
   TextInput,
   Text,
   View,
+  ScrollView,
   TouchableOpacity,
   Platform
 } from 'react-native';
 
-import HomeDetail from './HomeDetail.js';
+import HomeTopView from './HomeTopView.js';
 
 var Dimensions = require('Dimensions');
 var {width , height} = Dimensions.get('window');
@@ -26,7 +27,9 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         {this.renderNavBar()}
-          
+        <ScrollView>
+          <HomeTopView />
+        </ScrollView>
 
       </View>
     );
