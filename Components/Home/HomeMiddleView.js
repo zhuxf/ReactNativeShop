@@ -19,6 +19,7 @@ var {width} = Dimensions.get("window");
 import MiddleComponentsView from './MiddleComponentsView.js' ;
 import HomeTopMiddleLeft from '../../LocalData/HomeTopMiddleLeft.json';
 
+
 class HomeMiddleView extends Component {
   render() {
     return (
@@ -37,7 +38,7 @@ class HomeMiddleView extends Component {
     var dataLeft = HomeTopMiddleLeft.dataLeft[0];
     return (
       <TouchableOpacity onPress={()=> {alert('点击了' + dataLeft.title);}}>
-        <View style={{width: width * 0.5 , height: 129 , marginRight: 1 ,backgroundColor: 'white' , justifyContent: 'center' , alignItems: 'center', }}>
+        <View style={{width: width * 0.5 , height: 129 , backgroundColor: 'white' , justifyContent: 'center' , alignItems: 'center', }}>
           <Image source={{uri: dataLeft.img1}} style={{width: 128 ,height: 42}}/>
           <Image source={{uri: dataLeft.img2}} style={{width: 54 , height: 42 }}/>
           <Text style={{color: 'gray' , fontSize: 16}}>{dataLeft.title}</Text>

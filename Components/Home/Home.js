@@ -19,7 +19,7 @@ import React, {
 
 import HomeTopView from './HomeTopView.js';
 import HomeMiddleView from './HomeMiddleView.js';
-
+import HomeMiddleBottomView from './HomeMiddleBottomView.js' ;
 var Dimensions = require('Dimensions');
 var {width , height} = Dimensions.get('window');
 
@@ -31,6 +31,7 @@ class Home extends Component {
         <ScrollView>
           <HomeTopView />
           <HomeMiddleView />
+          <HomeMiddleBottomView />
         </ScrollView>
 
       </View>

@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     width: width * 0.5 -1,
     height: 64,
     marginBottom: 1/PixelRatio.get(),
+    marginLeft: 1/PixelRatio.get()
   },
 
 });
