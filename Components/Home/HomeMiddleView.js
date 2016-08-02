@@ -38,10 +38,10 @@ class HomeMiddleView extends Component {
       <View style={{width: width * 0.5 , height: 129 , marginRight: 1 ,backgroundColor: 'white' , justifyContent: 'center' , alignItems: 'center', }}>
         <Image source={{uri: dataLeft.img1}} style={{width: 128 ,height: 42}}/>
         <Image source={{uri: dataLeft.img2}} style={{width: 54 , height: 42 }}/>
-        <Text>{dataLeft.title}</Text>
-        <View style={{flexDirection: 'row'}}>
-          <Text>{dataLeft.price}</Text>
-          <Text>{dataLeft.sale}</Text>
+        <Text style={{color: 'gray' , fontSize: 16}}>{dataLeft.title}</Text>
+        <View style={{flexDirection: 'row' , marginTop: 5 , alignItems: 'center'}}>
+          <Text style={{color: 'blue' , fontSize: 11}}>{dataLeft.price}</Text>
+          <Text style={{color: 'orange' , fontSize: 9 , backgroundColor: 'yellow'}}>{dataLeft.sale}</Text>
         </View>
       </View>
     );
