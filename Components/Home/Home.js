@@ -18,6 +18,7 @@ import React, {
 } from 'react-native';
 
 import HomeTopView from './HomeTopView.js';
+import HomeMiddleView from './HomeMiddleView.js';
 
 var Dimensions = require('Dimensions');
 var {width , height} = Dimensions.get('window');
@@ -29,6 +30,7 @@ class Home extends Component {
         {this.renderNavBar()}
         <ScrollView>
           <HomeTopView />
+          <HomeMiddleView />
         </ScrollView>
 
       </View>
@@ -61,7 +63,7 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'gray',
   },
 
   navtopViewStyle: {
