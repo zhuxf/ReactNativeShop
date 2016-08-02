@@ -12,11 +12,16 @@ import React, {
   View,
   Image,
   ListView,
-  TouchableOpacity
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 
 import Dimensions from 'Dimensions';
 var {width , height} = Dimensions.get("window");
+var clos = 5 ;
+var cellWH = Platform.OS === 'ios' ? 70 : 50;
+var marginL = (width - cellWH * clos) / (clos + 1) ;
+
 
 
 class TopListView extends Component {
@@ -45,7 +50,7 @@ class TopListView extends Component {
   renderRow(rowData, sectionID, rowID, highlightRow){
     return(
       <TouchableOpacity onPress={()=> {alert('点击了'+rowID);}}>
-        <View style={{justifyContent: 'center', alignItems: 'center' , width: 70, height: 70,}}>
+        <View style={{justifyContent: 'center', alignItems: 'center' , width: cellWH, height: cellWH,}}>
           <Image source={{uri: rowData.image}} style={{width: 52 , height: 52 }}/>
           <Text>{rowData.title}</Text>
         </View>
@@ -68,7 +73,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     width: width,
     marginTop: 10,
-    marginLeft: (width - 70*5) / (5 + 1)
+    marginLeft: marginL
 
   },
 
