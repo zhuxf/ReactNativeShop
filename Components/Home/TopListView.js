@@ -19,7 +19,7 @@ import React, {
 import Dimensions from 'Dimensions';
 var {width , height} = Dimensions.get("window");
 var clos = 5 ;
-var cellWH = Platform.OS === 'ios' ? 70 : 50;
+var cellWH = Platform.OS === 'ios' ? 70 : 75  ;
 var marginL = (width - cellWH * clos) / (clos + 1) ;
 
 
