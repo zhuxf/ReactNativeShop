@@ -14,7 +14,9 @@ import React, {
   ScrollView
 } from 'react-native';
 
+import TopListView from './TopListView.js';
 import Dimensions from 'Dimensions';
+import TopMenu from '../../LocalData/TopMenu.json';
 var {width , height} = Dimensions.get("window");
 
 class HomeTopView extends Component {
@@ -53,11 +55,10 @@ class HomeTopView extends Component {
   renderScrollViewItem(){
     var itemArr = [];
     var colorArr = ['green' , 'red'];
-    for (var i = 0; i < colorArr.length; i++) {
+    var dataArr = TopMenu.data;
+    for (var i = 0; i < dataArr.length; i++) {
       itemArr.push(
-        <View key={i} style={{backgroundColor: colorArr[i] , width: width, height: 120}}>
-          <Text>{i}</Text>
-        </View>
+        <TopListView key={i} dataArr={dataArr[i]} />
       );
 
     }

@@ -14,25 +14,37 @@ import React, {
   ListView
 } from 'react-native';
 
+
 class TopListView extends Component {
 
   constructor(props){
     super(props);
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['row1' , 'row2']),
+      dataSource: ds.cloneWithRows(this.props.dataArr),
     };
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData)=> this.renderRow(rowData)}
+        />
 
       </View>
     );
+  }
+
+  renderRow(rowData){
+    return(
+      <View>
+        <Image source={{uri: rowData.image}} style={{width: 48 , height: 38 }}/>
+        <Text>{rowData.title}</Text>
+      </View>
+    );
+
   }
 }
 
