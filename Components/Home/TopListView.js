@@ -11,8 +11,12 @@ import React, {
   Text,
   View,
   Image,
-  ListView
+  ListView,
+  TouchableOpacity
 } from 'react-native';
+
+import Dimensions from 'Dimensions';
+var {width , height} = Dimensions.get("window");
 
 
 class TopListView extends Component {
@@ -30,19 +34,22 @@ class TopListView extends Component {
       <View style={styles.container}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(rowData)=> this.renderRow(rowData)}
+          renderRow={(rowData, sectionID, rowID, highlightRow)=> this.renderRow(rowData, sectionID, rowID, highlightRow)}
+          contentContainerStyle={styles.contentViewStyle}
         />
 
       </View>
     );
   }
 
-  renderRow(rowData){
+  renderRow(rowData, sectionID, rowID, highlightRow){
     return(
-      <View>
-        <Image source={{uri: rowData.image}} style={{width: 48 , height: 38 }}/>
-        <Text>{rowData.title}</Text>
-      </View>
+      <TouchableOpacity onPress={()=> {alert('点击了'+rowID);}}>
+        <View style={{justifyContent: 'center', alignItems: 'center' , width: 70, height: 70,}}>
+          <Image source={{uri: rowData.image}} style={{width: 52 , height: 52 }}/>
+          <Text>{rowData.title}</Text>
+        </View>
+      </TouchableOpacity>
     );
 
   }
@@ -54,6 +61,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+
+  contentViewStyle: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: width,
+    marginTop: 10,
+    marginLeft: (width - 70*5) / (5 + 1)
+
   },
 
 });
