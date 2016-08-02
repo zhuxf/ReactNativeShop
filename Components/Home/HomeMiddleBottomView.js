@@ -28,11 +28,20 @@ class HomeMiddleBottomView extends Component {
     );
   }
 
+  dealWithImageUrl(url){
+      if(url.search("w.h") == -1){
+        return url;
+      }else{
+        var dealUrl = url.replace("w.h" , "120.90");
+        return dealUrl;
+      }
+
+    }
+
   renderBottomView(){
     var itemArr = [] ;
     var dataArr = Home_D4.data;
-    for (var i = 0; i < dataArr.length; i++) {
-      var dataItem = dataArr[i];
+    for (var i = 0; i < dataArr.length; i++) {var dataItem = dataArr[i];
       itemArr.push(
         <MiddleComponentsView key={i}
           title = {dataItem.maintitle}
@@ -45,13 +54,7 @@ class HomeMiddleBottomView extends Component {
     return itemArr ;
   }
 
-  dealWithImageUrl(url){
-    if(url.search("w.h") == -1){
-      return url;
-    }else{
-      var dealUrl = url.replace("w.h" , "120.90");
-    }
-  }
+
 
 }
 
