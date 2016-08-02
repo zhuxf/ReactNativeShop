@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'row',
     width: width * 0.5 -1,
-    height: 70,
+    height: 64,
     marginBottom: 1/PixelRatio.get(),
   },
 

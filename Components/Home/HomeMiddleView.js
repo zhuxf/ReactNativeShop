@@ -35,9 +35,9 @@ class HomeMiddleView extends Component {
   renderLeftView(){
     var dataLeft = HomeTopMiddleLeft.dataLeft[0];
     return (
-      <View style={{width: width * 0.5 , height: 141 , marginRight: 1 ,backgroundColor: 'white' }}>
-        <Image source={{uri: dataLeft.img1}}/>
-        <Image source={{uri: dataLeft.img2}}/>
+      <View style={{width: width * 0.5 , height: 129 , marginRight: 1 ,backgroundColor: 'white' , justifyContent: 'center' , alignItems: 'center', }}>
+        <Image source={{uri: dataLeft.img1}} style={{width: 128 ,height: 42}}/>
+        <Image source={{uri: dataLeft.img2}} style={{width: 54 , height: 42 }}/>
         <Text>{dataLeft.title}</Text>
         <View style={{flexDirection: 'row'}}>
           <Text>{dataLeft.price}</Text>
