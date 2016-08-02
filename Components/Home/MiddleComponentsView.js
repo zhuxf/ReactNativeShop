@@ -11,6 +11,7 @@ import React, {
   Text,
   View,
   Image,
+  TouchableOpacity,
   PixelRatio
 } from 'react-native';
 
@@ -25,14 +26,16 @@ class MiddleComponentsView extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={{marginLeft: 5}}>
-          <Text style={{fontSize: 17 , color: this.props.titleColor , marginBottom: 5}} >{this.props.title}</Text>
-          <Text>{this.props.subTitle}</Text>
+      <TouchableOpacity onPress={()=> {alert('点击了'+this.props.subTitle);}}>
+        <View style={styles.container}>
+          <View style={{marginLeft: 5}}>
+            <Text style={{fontSize: 17 , color: this.props.titleColor , marginBottom: 5}} >{this.props.title}</Text>
+            <Text>{this.props.subTitle}</Text>
+          </View>
+          <Image source={{uri: this.props.rightImage}} style={{width:  64, height: 42}} />
         </View>
-        <Image source={{uri: this.props.rightImage}} style={{width:  64, height: 42}} />
+      </TouchableOpacity>
 
-      </View>
     );
   }
 }
