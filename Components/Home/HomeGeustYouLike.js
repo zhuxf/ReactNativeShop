@@ -19,7 +19,7 @@ class HomeGeustYouLike extends Component {
     return (
       <View style={styles.container}>
         <BottomCommonCell leftIcon="cnxh" leftTitle= "猜你喜欢" rightTitle= '' />
-        
+
 
       </View>
     );
@@ -29,7 +29,6 @@ class HomeGeustYouLike extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
     marginTop: 15,
   },
 
