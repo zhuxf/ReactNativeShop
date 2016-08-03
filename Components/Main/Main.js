@@ -61,23 +61,24 @@ class Main extends Component {
          badgeText= {badgeText}  >
 
         <Navigator
-        initialRoute={{name: {title}, index: 0}}
-        renderScene={(route, navigator) =>
-          <TabView
-            name={route.name}
-            onForward={() => {
-              var nextIndex = route.index + 1;
-              navigator.push({
-                name: 'HomeDetail' + nextIndex,
-                index: nextIndex,
-              });
-            }}
-            onBack={() => {
-              if (route.index > 0) {
-                navigator.pop();
-              }
-            }}
-          />
+          initialRoute={{name: {title}}}
+          renderScene={(route, navigator) => {
+            return (
+              <TabView
+                onForward={() => {
+                  navigator.push({
+                    component: Home,
+                    title: route.title,
+                  });
+                }}
+                onBack={() => {
+                  if (route.index > 0) {
+                    navigator.pop();
+                  }
+                }}
+              />
+            );
+          }
         }
       />
 

@@ -16,7 +16,7 @@ class HomeDetail extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        <Text>
           详情页面
         </Text>
 

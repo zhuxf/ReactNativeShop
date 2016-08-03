@@ -21,12 +21,15 @@ import HomeTopView from './HomeTopView.js';
 import HomeMiddleView from './HomeMiddleView.js';
 import HomeMiddleBottomView from './HomeMiddleBottomView.js' ;
 import HomeShopCenter from './HomeShopCenter.js';
+import HomeDetail from './HomeDetail.js';
 var Dimensions = require('Dimensions');
 var {width , height} = Dimensions.get('window');
 
 class Home extends Component {
+
   render() {
     return (
+
       <View style={styles.container}>
         {this.renderNavBar()}
         <ScrollView>
@@ -51,15 +54,24 @@ class Home extends Component {
           style={styles.topTextInputStyle}
           clearButtonMode='always' />
         <View style={styles.topRightViewStyle}>
-          <TouchableOpacity onPress={()=> {alert('点击');}}>
+          <TouchableOpacity onPress={this.props.onForward}>
             <Image source={{uri: 'icon_homepage_message'}} style={[styles.navRightImageStyle,{marginRight:3}]}/>
           </TouchableOpacity>
           <TouchableOpacity onPress={()=> {alert('点击');}}>
-          <Image source={{uri: 'icon_homepage_scan'}} style={styles.navRightImageStyle}/>
+            <Image source={{uri: 'icon_homepage_scan'}} style={styles.navRightImageStyle}/>
           </TouchableOpacity>
         </View>
       </View>
     );
+  }
+
+  pushToDetail(){
+    console.log(this.props.navigator);
+    this.props.navigator.push({
+      component: HomeDetail ,
+      title: '详情'
+    });
+
   }
 }
 
