@@ -9,21 +9,41 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  ListView
 } from 'react-native';
 
 import BottomCommonCell from './BottomCommonCell.js';
 
 class HomeGeustYouLike extends Component {
+
+  constructor(props) {
+  super(props);
+  // var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+  this.state = {
+    dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+}
+
   render() {
     return (
       <View style={styles.container}>
         <BottomCommonCell leftIcon="cnxh" leftTitle= "猜你喜欢" rightTitle= '' />
-
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData, sectionID, rowID, highlightRow) => this._renderRow(rowData, sectionID, rowID, highlightRow)}
+      />
 
       </View>
     );
   }
+
+  _renderRow(rowData, sectionID, rowID, highlightRow){
+      return(
+        <View>
+        </View>
+      );
+  }
+
 }
 
 const styles = StyleSheet.create({
