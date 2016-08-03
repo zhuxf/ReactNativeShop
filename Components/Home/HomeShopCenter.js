@@ -12,13 +12,13 @@ import React, {
   View
 } from 'react-native';
 
-class Shop extends Component {
+import BottomCommonCell from './BottomCommonCell.js';
+
+class HomeShopCenter extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          Welcome to React Native!
-        </Text>
+        <BottomCommonCell leftIcon="gwzx" leftTitle= "购物中心" rightTitle= "全部4家"/>
 
       </View>
     );
@@ -28,11 +28,11 @@ class Shop extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    
+    backgroundColor: '#dddddd',
+    marginTop: 15
   },
 
 });
 
-module.exports = Shop;
+module.exports = HomeShopCenter;
