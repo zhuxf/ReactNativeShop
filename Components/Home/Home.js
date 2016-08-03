@@ -21,6 +21,7 @@ import HomeTopView from './HomeTopView.js';
 import HomeMiddleView from './HomeMiddleView.js';
 import HomeMiddleBottomView from './HomeMiddleBottomView.js' ;
 import HomeShopCenter from './HomeShopCenter.js';
+import HomeGeustYouLike from './HomeGeustYouLike.js';
 import HomeDetail from './HomeDetail.js';
 var Dimensions = require('Dimensions');
 var {width , height} = Dimensions.get('window');
@@ -37,6 +38,7 @@ class Home extends Component {
           <HomeMiddleView />
           <HomeMiddleBottomView />
           <HomeShopCenter />
+          <HomeGeustYouLike />
         </ScrollView>
 
       </View>
