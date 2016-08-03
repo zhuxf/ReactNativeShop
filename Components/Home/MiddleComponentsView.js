@@ -28,7 +28,7 @@ class MiddleComponentsView extends Component {
     return (
       <TouchableOpacity onPress={()=> {alert('点击了'+this.props.subTitle);}}>
         <View style={styles.container}>
-          <View style={{marginLeft: 5}}>
+          <View style={{marginLeft: 8}}>
             <Text style={{fontSize: 17 , color: this.props.titleColor , marginBottom: 5}} >{this.props.title}</Text>
             <Text>{this.props.subTitle}</Text>
           </View>
