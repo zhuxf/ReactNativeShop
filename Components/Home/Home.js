@@ -33,7 +33,7 @@ class Home extends Component {
 
       <View style={styles.container}>
         {this.renderNavBar()}
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <HomeTopView />
           <HomeMiddleView />
           <HomeMiddleBottomView />

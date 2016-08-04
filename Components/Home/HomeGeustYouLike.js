@@ -51,12 +51,12 @@ class HomeGeustYouLike extends Component {
           <View style={{marginLeft: 5, flex: 1}}>
             <View style={styles.titleViewStyle}>
               <Text style={{fontSize: 16, fontWeight: 'bold' }}>{rowData.title}</Text>
-              <Text>{rowData.topRightInfo}</Text>
+              <Text style={{color: 'gray'}} >{rowData.topRightInfo}</Text>
             </View>
-            <Text style={{color: 'gray' ,fontSize: 13 , marginTop: 10, marginBottom: 13}}>{rowData.subTitle}</Text>
+            <Text style={{color: 'gray' ,fontSize: 13 , marginTop: 10, marginBottom: 10}}>{rowData.subTitle}</Text>
             <View style={styles.titleViewStyle}>
                 <Text style={{color: 'red'}}>{rowData.subMessage}</Text>
-                <Text>{rowData.bottomRightInfo}</Text>
+                <Text style={{color: 'gray', fontWeight: 'bold'}} >{rowData.bottomRightInfo}</Text>
             </View>
           </View>
 
