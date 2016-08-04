@@ -51,10 +51,10 @@ class ShopCenterCell extends Component {
   render() {
     return(
       <TouchableOpacity onPress={()=> {alert('点击了'+this.props.shopName);}}>
-        <View style={{marginRight: 8 , marginTop: 8 , marginLeft: 5 , marginBottom: 8}}>
-          <Image source={{uri: this.props.shopImage}} style={{width: 120 , height: 87 , borderRadius: 7}}/>
+        <View style={{marginRight: 8 , marginTop: 8 , marginLeft: 5 , marginBottom: 8, alignItems: 'center'}}>
+          <Image source={{uri: this.props.shopImage}} style={{width: 110 , height: 87 , borderRadius: 7}}/>
           <Text style={{position: 'absolute' , bottom: 25, backgroundColor: 'orange', color: 'white', fontSize: 11 , padding: 3}} >{this.props.shopSale}</Text>
-          <Text style={{marginTop: -10}}>{this.props.shopName}</Text>
+          <Text style={{marginTop: 3}}>{this.props.shopName}</Text>
         </View>
       </TouchableOpacity>
     );
