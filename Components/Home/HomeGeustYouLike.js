@@ -43,7 +43,19 @@ class HomeGeustYouLike extends Component {
   _renderRow(rowData, sectionID, rowID, highlightRow){
       return(
         <View>
-          <Text>iiiiiiiii{rowID}</Text>
+          <View>
+            <Image />
+            <Image />
+          </View>
+          <View>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+          </View>
+          <View>
+            <Text></Text>
+            <Text></Text>
+          </View>
         </View>
       );
   }
