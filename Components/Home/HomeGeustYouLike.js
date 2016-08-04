@@ -11,7 +11,8 @@ import React, {
   Text,
   View,
   Image,
-  ListView
+  ListView,
+  PixelRatio
 } from 'react-native';
 
 import BottomCommonCell from './BottomCommonCell.js';
@@ -43,19 +44,22 @@ class HomeGeustYouLike extends Component {
 
   _renderRow(rowData, sectionID, rowID, highlightRow){
       return(
-        <View>
+        <View style={{flexDirection: 'row', padding: 8, backgroundColor: 'white',borderBottomColor: '#dddddd', borderBottomWidth: 1/PixelRatio.get()}}>
           <View>
-            <Image source={{uri: this.dealWithImageUrl(rowData.imageUrl)}} style={{width: 80 , height: 80}}/>
+            <Image source={{uri: this.dealWithImageUrl(rowData.imageUrl)}} style={{width: 90 , height: 80, borderRadius: 8}}/>
           </View>
-          <View>
-            <Text>{rowData.title}</Text>
-            <Text>{rowData.subTitle}</Text>
-            <Text>{rowData.subMessage}</Text>
+          <View style={{marginLeft: 5, flex: 1}}>
+            <View style={styles.titleViewStyle}>
+              <Text style={{fontSize: 16, fontWeight: 'bold' }}>{rowData.title}</Text>
+              <Text>{rowData.topRightInfo}</Text>
+            </View>
+            <Text style={{color: 'gray' ,fontSize: 13 , marginTop: 10, marginBottom: 13}}>{rowData.subTitle}</Text>
+            <View style={styles.titleViewStyle}>
+                <Text style={{color: 'red'}}>{rowData.subMessage}</Text>
+                <Text>{rowData.bottomRightInfo}</Text>
+            </View>
           </View>
-          <View>
-            <Text>">"+{rowData.topRightInfo}</Text>
-            <Text>{rowData.bottomRightInfo}</Text>
-          </View>
+
         </View>
       );
   }
@@ -79,6 +83,12 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 15,
   },
+
+  titleViewStyle:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
 
 });
 
