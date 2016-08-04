@@ -12,7 +12,8 @@ import React, {
   View,
   Image,
   ListView,
-  PixelRatio
+  PixelRatio,
+  TouchableOpacity
 } from 'react-native';
 
 import BottomCommonCell from './BottomCommonCell.js';
@@ -44,23 +45,24 @@ class HomeGeustYouLike extends Component {
 
   _renderRow(rowData, sectionID, rowID, highlightRow){
       return(
-        <View style={{flexDirection: 'row', padding: 8, backgroundColor: 'white',borderBottomColor: '#dddddd', borderBottomWidth: 1/PixelRatio.get()}}>
-          <View>
-            <Image source={{uri: this.dealWithImageUrl(rowData.imageUrl)}} style={{width: 90 , height: 80, borderRadius: 8}}/>
-          </View>
-          <View style={{marginLeft: 5, flex: 1}}>
-            <View style={styles.titleViewStyle}>
-              <Text style={{fontSize: 16, fontWeight: 'bold' }}>{rowData.title}</Text>
-              <Text style={{color: 'gray'}} >{rowData.topRightInfo}</Text>
+        <TouchableOpacity onPress={()=>{alert('点击了第'+ rowID + '项，' + rowData.title);}}>
+          <View style={{flexDirection: 'row', padding: 8, backgroundColor: 'white',borderBottomColor: '#dddddd', borderBottomWidth: 1/PixelRatio.get()}}>
+            <View>
+              <Image source={{uri: this.dealWithImageUrl(rowData.imageUrl)}} style={{width: 90 , height: 80, borderRadius: 8}}/>
             </View>
-            <Text style={{color: 'gray' ,fontSize: 13 , marginTop: 10, marginBottom: 10}}>{rowData.subTitle}</Text>
-            <View style={styles.titleViewStyle}>
-                <Text style={{color: 'red'}}>{rowData.subMessage}</Text>
-                <Text style={{color: 'gray', fontWeight: 'bold'}} >{rowData.bottomRightInfo}</Text>
+            <View style={{marginLeft: 5, flex: 1}}>
+              <View style={styles.titleViewStyle}>
+                <Text style={{fontSize: 16, fontWeight: 'bold' }}>{rowData.title}</Text>
+                <Text style={{color: 'gray'}} >{rowData.topRightInfo}</Text>
+              </View>
+              <Text style={{color: 'gray' ,fontSize: 13 , marginTop: 10, marginBottom: 10}}>{rowData.subTitle}</Text>
+              <View style={styles.titleViewStyle}>
+                  <Text style={{color: 'red'}}>{rowData.subMessage}</Text>
+                  <Text style={{color: 'gray', fontWeight: 'bold'}} >{rowData.bottomRightInfo}</Text>
+              </View>
             </View>
           </View>
-
-        </View>
+        </TouchableOpacity>
       );
   }
 
