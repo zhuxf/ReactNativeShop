@@ -10,6 +10,7 @@ import React, {
   StyleSheet,
   Text,
   View,
+  Image,
   ListView
 } from 'react-native';
 
@@ -44,21 +45,30 @@ class HomeGeustYouLike extends Component {
       return(
         <View>
           <View>
-            <Image />
-            <Image />
+            <Image source={{uri: this.dealWithImageUrl(rowData.imageUrl)}} style={{width: 80 , height: 80}}/>
           </View>
           <View>
-            <Text></Text>
-            <Text></Text>
-            <Text></Text>
+            <Text>{rowData.title}</Text>
+            <Text>{rowData.subTitle}</Text>
+            <Text>{rowData.subMessage}</Text>
           </View>
           <View>
-            <Text></Text>
-            <Text></Text>
+            <Text>">"+{rowData.topRightInfo}</Text>
+            <Text>{rowData.bottomRightInfo}</Text>
           </View>
         </View>
       );
   }
+
+  dealWithImageUrl(url){
+      if(url.search("w.h") == -1){
+        return url;
+      }else{
+        var dealUrl = url.replace("w.h" , "120.90");
+        return dealUrl;
+      }
+
+    }
 
 
 
