@@ -44,7 +44,6 @@ class HomeTopView extends Component {
   }
 
   onScrollAnimationEnd(){
-    console.log("=====>");
     // var currentPage = Math.floor(e.nativeEvent.contentOffset.x/width);
     this.setState({
       activePage: (this.state.activePage === 0) ? 1 : 0
